@@ -1,6 +1,7 @@
 package com.adp.backend.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,5 +15,8 @@ public class ProductService {
      private  ProductRepo repo;
      public List<Product> getAllProducts(){
         return repo.findAll();
+     }
+     public Optional<Product> getProductById(int id){
+      return repo.findById(id);
      }
     }
